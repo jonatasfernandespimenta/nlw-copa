@@ -8,6 +8,7 @@ interface Props {
   title: string;
   showBackButton?: boolean;
   showShareButton?: boolean;
+  onShare?: () => void;
 }
 
 export function Header({ title, showBackButton = false, showShareButton = false }: Props) {
@@ -30,7 +31,7 @@ export function Header({ title, showBackButton = false, showShareButton = false 
         {
           showShareButton
             ?
-            <ButtonIcon icon={Export} />
+            <ButtonIcon onPress={onShare} icon={Export} />
             :
             <EmptyBoxSpace />
         }
